@@ -185,6 +185,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Koneksi.vb" />
     <Compile Include="MasterFumo.Designer.vb">
       <DependentUpon>MasterFumo.vb</DependentUpon>
     </Compile>
