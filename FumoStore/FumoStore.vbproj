@@ -214,6 +214,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Repository\FumoRepository.vb" />
+    <Compile Include="Repository\Model\Fumo.vb" />
     <Compile Include="TransaksiFumo.Designer.vb">
       <DependentUpon>TransaksiFumo.vb</DependentUpon>
     </Compile>
