@@ -35,16 +35,20 @@ Public Class MasterFumo
         Kembali()
     End Sub
 
-    Private Sub Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Tampil()
         Dim data = FumoRepository.All()
         data.Columns.Add("Harga", GetType(String))
         For Each row As DataRow In data.Rows
             row("Harga") = String.Format(Indonesian.Culture, "{0:C}", row("rawharga"))
         Next
-        data.Columns.Remove("rawhargax")
+        data.Columns.Remove("rawharga")
         Dim dataView As New DataView(data)
 
         TableFumo.DataSource = dataView
+    End Sub
+
+    Private Sub Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Tampil()
     End Sub
 
     Private Sub ClickCell(sender As Object, e As DataGridViewCellEventArgs) Handles TableFumo.CellClick
@@ -66,5 +70,15 @@ Public Class MasterFumo
     Private Sub BtnBersih_Click(sender As Object, e As EventArgs) Handles BtnBersih.Click
         Bersih()
         ModeTambah()
+    End Sub
+
+    Private Sub BtnTambah_Click(sender As Object, e As EventArgs) Handles BtnTambah.Click
+        Dim fumo = New Fumo(-1, InNama.Text, InHarga.Text)
+        If FumoRepository.Tambah(fumo) Then
+            MessageBox.Show("Data berhasil ditambahkan!")
+            Tampil()
+        Else
+            MessageBox.Show("Gagal menambah data!")
+        End If
     End Sub
 End Class

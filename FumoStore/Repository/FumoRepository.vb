@@ -29,4 +29,14 @@ Public Class FumoRepository
 
         Return Nothing
     End Function
+
+    Public Shared Function Tambah(fumo As Fumo) As Integer
+        Dim query As String = "INSERT INTO barang (nama, harga) VALUES (@nama, @harga)"
+        Dim cmd As MySqlCommand = Koneksi.Query(query)
+
+        cmd.Parameters.AddWithValue("@nama", fumo.m_Nama)
+        cmd.Parameters.AddWithValue("@harga", fumo.m_Harga)
+
+        Return Convert.ToInt32(cmd.ExecuteNonQuery())
+    End Function
 End Class
