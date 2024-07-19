@@ -11,4 +11,8 @@
         transaksi = New TransaksiFumo()
         transaksi.Visible = True
     End Sub
+
+    Private Sub Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Koneksi.Konek()
+    End Sub
 End Class

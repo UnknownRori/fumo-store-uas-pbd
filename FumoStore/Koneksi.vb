@@ -5,7 +5,7 @@ Imports MySql.Data.MySqlClient
 Imports Mysqlx
 
 Public Class Koneksi
-    Public Shared m_connStr As String = "server=localhost;user=root;database=aruskas;port=3306;password=;"
+    Public Shared m_connStr As String = "server=localhost;user=root;database=fumo-store;port=3306;password=UnknownRori;"
     Public Shared m_conn As New MySqlConnection(m_connStr)
 
     Public Shared Function Konek() As Boolean

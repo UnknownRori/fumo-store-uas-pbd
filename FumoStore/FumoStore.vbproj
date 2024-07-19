@@ -185,6 +185,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="i18\Indonesian.vb" />
     <Compile Include="Koneksi.vb" />
     <Compile Include="MasterFumo.Designer.vb">
       <DependentUpon>MasterFumo.vb</DependentUpon>
@@ -215,6 +216,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Repository\FumoRepository.vb" />
+    <Compile Include="Repository\KeranjangRepository.vb" />
     <Compile Include="Repository\Model\Fumo.vb" />
     <Compile Include="TransaksiFumo.Designer.vb">
       <DependentUpon>TransaksiFumo.vb</DependentUpon>

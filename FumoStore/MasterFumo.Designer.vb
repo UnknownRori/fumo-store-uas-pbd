@@ -28,13 +28,13 @@ Partial Class MasterFumo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.InNama = New System.Windows.Forms.TextBox()
         Me.InHarga = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.TableFumo = New System.Windows.Forms.DataGridView()
+        Me.BtnTambah = New System.Windows.Forms.Button()
+        Me.BtnEdit = New System.Windows.Forms.Button()
+        Me.BtnHapus = New System.Windows.Forms.Button()
+        Me.BtnBersih = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TableFumo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -86,60 +86,60 @@ Partial Class MasterFumo
         Me.InHarga.Size = New System.Drawing.Size(308, 20)
         Me.InHarga.TabIndex = 4
         '
-        'DataGridView1
+        'TableFumo
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 146)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(396, 267)
-        Me.DataGridView1.TabIndex = 5
+        Me.TableFumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TableFumo.Location = New System.Drawing.Point(12, 146)
+        Me.TableFumo.Name = "TableFumo"
+        Me.TableFumo.Size = New System.Drawing.Size(396, 267)
+        Me.TableFumo.TabIndex = 5
         '
-        'Button1
+        'BtnTambah
         '
-        Me.Button1.Location = New System.Drawing.Point(86, 113)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(76, 27)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Tambah"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnTambah.Location = New System.Drawing.Point(86, 113)
+        Me.BtnTambah.Name = "BtnTambah"
+        Me.BtnTambah.Size = New System.Drawing.Size(76, 27)
+        Me.BtnTambah.TabIndex = 6
+        Me.BtnTambah.Text = "Tambah"
+        Me.BtnTambah.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnEdit
         '
-        Me.Button2.Location = New System.Drawing.Point(168, 113)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(76, 27)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnEdit.Location = New System.Drawing.Point(168, 113)
+        Me.BtnEdit.Name = "BtnEdit"
+        Me.BtnEdit.Size = New System.Drawing.Size(76, 27)
+        Me.BtnEdit.TabIndex = 7
+        Me.BtnEdit.Text = "Edit"
+        Me.BtnEdit.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnHapus
         '
-        Me.Button3.Location = New System.Drawing.Point(250, 113)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(76, 27)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "Hapus"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnHapus.Location = New System.Drawing.Point(250, 113)
+        Me.BtnHapus.Name = "BtnHapus"
+        Me.BtnHapus.Size = New System.Drawing.Size(76, 27)
+        Me.BtnHapus.TabIndex = 8
+        Me.BtnHapus.Text = "Hapus"
+        Me.BtnHapus.UseVisualStyleBackColor = True
         '
-        'Button4
+        'BtnBersih
         '
-        Me.Button4.Location = New System.Drawing.Point(329, 113)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(76, 27)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "Bersih"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BtnBersih.Location = New System.Drawing.Point(329, 113)
+        Me.BtnBersih.Name = "BtnBersih"
+        Me.BtnBersih.Size = New System.Drawing.Size(76, 27)
+        Me.BtnBersih.TabIndex = 9
+        Me.BtnBersih.Text = "Bersih"
+        Me.BtnBersih.UseVisualStyleBackColor = True
         '
         'MasterFumo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(420, 419)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.BtnBersih)
+        Me.Controls.Add(Me.BtnHapus)
+        Me.Controls.Add(Me.BtnEdit)
+        Me.Controls.Add(Me.BtnTambah)
+        Me.Controls.Add(Me.TableFumo)
         Me.Controls.Add(Me.InHarga)
         Me.Controls.Add(Me.InNama)
         Me.Controls.Add(Me.Label2)
@@ -151,7 +151,7 @@ Partial Class MasterFumo
         Me.TopMost = True
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TableFumo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -163,9 +163,9 @@ Partial Class MasterFumo
     Friend WithEvents Label2 As Label
     Friend WithEvents InNama As TextBox
     Friend WithEvents InHarga As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents TableFumo As DataGridView
+    Friend WithEvents BtnTambah As Button
+    Friend WithEvents BtnEdit As Button
+    Friend WithEvents BtnHapus As Button
+    Friend WithEvents BtnBersih As Button
 End Class
