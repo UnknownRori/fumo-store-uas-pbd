@@ -81,4 +81,16 @@ Public Class MasterFumo
             MessageBox.Show("Gagal menambah data!")
         End If
     End Sub
+
+    Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
+        Dim fumo = New Fumo(Me.Id, InNama.Text, InHarga.Text)
+        ModeTambah()
+        If FumoRepository.Hapus(Fumo) Then
+            MessageBox.Show("Data berhasil dihapus!")
+            Tampil()
+        Else
+            MessageBox.Show("Gagal menghapus data!")
+        End If
+        Bersih()
+    End Sub
 End Class

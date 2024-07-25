@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports iText.StyledXmlParser.Jsoup.Select.Evaluator
+Imports MySql.Data.MySqlClient
 
 Public Class FumoRepository
     Public Shared Function All() As DataTable
@@ -38,5 +39,24 @@ Public Class FumoRepository
         cmd.Parameters.AddWithValue("@harga", fumo.m_Harga)
 
         Return Convert.ToInt32(cmd.ExecuteNonQuery())
+    End Function
+
+    Public Shared Function Hapus(fumo As Fumo) As Boolean
+        Dim query As String = "DELETE FROM barang WHERE id = @id"
+        Try
+            Dim cmd As MySqlCommand = Koneksi.Query(query)
+
+            cmd.Parameters.AddWithValue("@id", fumo.m_Id)
+
+            Dim result As Integer = Convert.ToInt32(cmd.ExecuteNonQuery())
+
+            If result > 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As MySqlException
+            Return False
+        End Try
     End Function
 End Class
