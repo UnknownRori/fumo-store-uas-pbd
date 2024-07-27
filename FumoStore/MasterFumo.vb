@@ -80,6 +80,7 @@ Public Class MasterFumo
         Else
             MessageBox.Show("Gagal menambah data!")
         End If
+        Bersih()
     End Sub
 
     Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
@@ -90,6 +91,18 @@ Public Class MasterFumo
             Tampil()
         Else
             MessageBox.Show("Gagal menghapus data!")
+        End If
+        Bersih()
+    End Sub
+
+    Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
+        Dim fumo = New Fumo(Me.Id, InNama.Text, InHarga.Text)
+        ModeTambah()
+        If fumo.Update(InNama.Text, InHarga.Text) Then
+            MessageBox.Show("Data berhasil diupdate!")
+            Tampil()
+        Else
+            MessageBox.Show("Gagal meng-update data!")
         End If
         Bersih()
     End Sub

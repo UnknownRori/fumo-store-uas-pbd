@@ -41,6 +41,17 @@ Public Class FumoRepository
         Return Convert.ToInt32(cmd.ExecuteNonQuery())
     End Function
 
+    Public Shared Function Update(fumo As Fumo) As Integer
+        Dim query As String = "UPDATE barang SET nama= @nama, harga = @harga WHERE id = @id"
+        Dim cmd As MySqlCommand = Koneksi.Query(query)
+
+        cmd.Parameters.AddWithValue("@id", fumo.m_Id)
+        cmd.Parameters.AddWithValue("@nama", fumo.m_Nama)
+        cmd.Parameters.AddWithValue("@harga", fumo.m_Harga)
+
+        Return Convert.ToInt32(cmd.ExecuteNonQuery())
+    End Function
+
     Public Shared Function Hapus(fumo As Fumo) As Boolean
         Dim query As String = "DELETE FROM barang WHERE id = @id"
         Try

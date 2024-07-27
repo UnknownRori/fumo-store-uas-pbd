@@ -8,4 +8,10 @@
         Me.m_Nama = nama
         Me.m_Harga = harga
     End Sub
+
+    Public Function Update(nama As String, harga As Integer) As Boolean
+        Me.m_Nama = nama
+        Me.m_Harga = harga
+        Return FumoRepository.Update(Me)
+    End Function
 End Class
