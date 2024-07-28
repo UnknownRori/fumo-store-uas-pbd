@@ -3,6 +3,7 @@
 Public Class TransaksiFumo
     Dim m_fumos As List(Of Fumo) = New List(Of Fumo)
     Dim m_table As DataTable = New DataTable
+    Dim total_harga = 0
     Dim m_index = 1
     Dim NO = -1
 
@@ -57,6 +58,7 @@ Public Class TransaksiFumo
     End Sub
 
     Private Sub UpdateTampil()
+        total_harga = 0
         Dim clone = m_table.Copy()
         clone.Columns.Add("harga")
 
@@ -65,10 +67,12 @@ Public Class TransaksiFumo
         Next
         clone.Columns.Add("total")
         For Each row As DataRow In clone.Rows
-            row("total") = String.Format(Indonesian.Culture, "{0:C}", row("rawharga") * row("rawtotal"))
+            total_harga += Val(row("rawtotal"))
+            row("total") = String.Format(Indonesian.Culture, "{0:C}", Val(row("rawtotal")))
         Next
         clone.Columns.Remove("rawharga")
         clone.Columns.Remove("rawtotal")
+        TotalHargaTampil.Text = String.Format(Indonesian.Culture, "{0:C}", total_harga)
         TableTransaksi.DataSource = New DataView(clone)
     End Sub
 
@@ -104,7 +108,8 @@ Public Class TransaksiFumo
         End If
         Try
             Dim fumo = m_fumos(Index)
-            TotalHarga.Text = fumo.m_Harga * Val(InJumlah.Text)
+            ' TotalHarga.Text = fumo.m_Harga * Val(InJumlah.Text)
+            TotalHarga.Text = String.Format(Indonesian.Culture, "{0:C}", fumo.m_Harga * Val(InJumlah.Text))
         Catch ex As Exception
         End Try
 
@@ -154,5 +159,22 @@ Public Class TransaksiFumo
     Private Sub BtnHapus_Click(sender As Object, e As EventArgs) Handles BtnHapus.Click
         m_table.Columns.RemoveAt(NO)
         UpdateTampil()
+    End Sub
+
+    Private Sub InBayar_TextChanged(sender As Object, e As EventArgs) Handles InBayar.TextChanged
+        Kembalian.Text = String.Format(Indonesian.Culture, "{0:C}", Val(InBayar.Text) - total_harga)
+    End Sub
+
+    Private Sub fumoComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles fumoComboBox.SelectedIndexChanged
+        Dim Index = fumoComboBox.SelectedIndex()
+        If Index < 0 Or Index > m_fumos.Count Then
+            Return
+        End If
+        Try
+            Dim fumo = m_fumos(Index)
+            ' TotalHarga.Text = fumo.m_Harga * Val(InJumlah.Text)
+            TotalHarga.Text = String.Format(Indonesian.Culture, "{0:C}", fumo.m_Harga * Val(InJumlah.Text))
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

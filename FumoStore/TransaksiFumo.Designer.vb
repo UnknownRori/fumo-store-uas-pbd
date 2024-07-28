@@ -36,7 +36,7 @@ Partial Class TransaksiFumo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TotalHargaTampil = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.InBayar = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Kembalian = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -152,6 +152,7 @@ Partial Class TransaksiFumo
         '
         'TotalHargaTampil
         '
+        Me.TotalHargaTampil.Enabled = False
         Me.TotalHargaTampil.Location = New System.Drawing.Point(124, 438)
         Me.TotalHargaTampil.Name = "TotalHargaTampil"
         Me.TotalHargaTampil.ReadOnly = True
@@ -168,12 +169,12 @@ Partial Class TransaksiFumo
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Total Harga"
         '
-        'TextBox3
+        'InBayar
         '
-        Me.TextBox3.Location = New System.Drawing.Point(124, 464)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(515, 20)
-        Me.TextBox3.TabIndex = 21
+        Me.InBayar.Location = New System.Drawing.Point(124, 464)
+        Me.InBayar.Name = "InBayar"
+        Me.InBayar.Size = New System.Drawing.Size(515, 20)
+        Me.InBayar.TabIndex = 21
         '
         'Label5
         '
@@ -233,7 +234,7 @@ Partial Class TransaksiFumo
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.TotalHargaTampil)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.InBayar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TotalHarga)
         Me.Controls.Add(Me.Label3)
@@ -272,7 +273,7 @@ Partial Class TransaksiFumo
     Friend WithEvents Label3 As Label
     Friend WithEvents TotalHargaTampil As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents InBayar As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Kembalian As TextBox
     Friend WithEvents Label6 As Label
